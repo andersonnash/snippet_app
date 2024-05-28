@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by_email(params[:email])
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to snippets_path, notice: I18n.translate(".logged_in")
+      redirect_to root_url, notice: I18n.translate(".logged_in")
     else
       flash.now.alert = I18n.translate(".invalid")
       render "new"
@@ -15,6 +15,6 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to login_path, notice: I18n.translate('.logged_out')
+    redirect_to root_url, notice: I18n.translate('.logged_out')
   end
 end
