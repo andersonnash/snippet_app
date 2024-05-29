@@ -51,6 +51,10 @@ gem "bootsnap", require: false
 gem 'tailwindcss-rails'
 gem 'sassc-rails'
 
+gem 'redcarpet'
+gem 'pygments.rb'
+
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
