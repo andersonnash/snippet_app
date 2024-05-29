@@ -1,1 +1,19 @@
-<%= link_to 'New Snippet', new_snippet_path %>
+<h1>Snippets</h1>
+<%= link_to 'New Snippet', new_snippet_path, class: 'text-blue-500 underline' %>
+
+<div class="flex flex-wrap justify-center">
+  <% @snippets.each do |snippet| %>
+    <div class="snippet-card bg-gray-200 p-4 rounded-lg shadow-md mx-4 my-4 w-64 h-48 overflow-hidden">
+      <h3 class="text-xl font-bold mb-2 truncate flex items-center"><%= snippet.title %></h3>
+      <p class="overflow-hidden text-ellipsis"><%= snippet.description %></p>
+      <div class="code-block overflow-hidden text-ellipsis"><%= raw snippet.rendered_code_block %></div>
+      <div class="flex justify-end mt-4">
+        <%= link_to 'Show', snippet_path(snippet), class: 'text-blue-500 underline mr-2' %>
+        <%= link_to 'Edit', edit_snippet_path(snippet), class: 'text-green-500 underline mr-2' %>
+        <%= button_to 'Delete', snippet_path(snippet), method: :delete, data: { turbo_confirm: "Are you sure?" }, class: 'text-red-500 underline' %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+

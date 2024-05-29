@@ -1,5 +1,5 @@
 module.exports = {
-  darkMode: 'class', // or 'media' for media-query based dark mode
+  darkMode: 'media', // or 'media' for media-query based dark mode
   content: [
     './app/**/*.html.erb',
     './app/helpers/**/*.rb',
