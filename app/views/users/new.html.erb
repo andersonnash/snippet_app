@@ -52,6 +52,10 @@
         <div class="actions flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
           <%= f.submit "Sign Up" %>
         </div>
+
+        <div class="text-center mt-4">
+          <p class="text-sm text-gray-600">Already Signed Up? <%= link_to 'Log in', login_path, class: "text-indigo-600 hover:text-indigo-500" %></p>
+      </div>
       </div>
     </div>
   </div>
