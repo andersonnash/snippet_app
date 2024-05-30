@@ -5,9 +5,10 @@
       
       <%= f.label :title, class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
       <%= f.text_field :title, class: "mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300", required: true %>
+
+      <%= f.label :language, class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mt-4" %>
+      <%= f.select :language, options_for_select([['Ruby', 'ruby'], ['Python', 'python']]), {}, class: "mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300", required: true %>
       
-      <%= f.label :language, class: "block text-sm font-medium text-gray-700 dark:text-gray-300" %>
-      <%= f.text_field :title, class: "mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300", required: true %>
 
       <%= f.label :description, class: "block text-sm font-medium text-gray-700 dark:text-gray-300 mt-4" %>
       <%= f.text_area :description, placeholder: "Description Here", class: "mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-4 py-2.5 h-32 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300", required: true %>
@@ -17,6 +18,7 @@
       <%= f.text_area :code_block, placeholder: "Code Block Here", class: "mt-2 w-full placeholder-gray-400/70 dark:placeholder-gray-500 rounded-lg border border-gray-200 bg-white px-4 py-2.5 h-32 text-gray-700 focus:border-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40 dark:border-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:focus:border-blue-300" %>
       
       <%= f.submit "Update Snippet", class: "mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg px-4 py-2.5 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40" %>
+      <%= link_to "Cancel", snippets_path, class: "w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold rounded-lg px-4 py-2.5 focus:outline-none focus:ring focus:ring-gray-300 focus:ring-opacity-40 text-center" %>
     </div>
   </div>
 <% end %>
