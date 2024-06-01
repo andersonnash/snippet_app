@@ -54,6 +54,12 @@ gem 'sassc-rails'
 gem 'redcarpet'
 gem 'pygments.rb'
 
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 
 group :development, :test do
