@@ -6,6 +6,10 @@ module.exports = {
     './app/javascript/**/*.js',
     './app/views/**/*',
     './app/assets/stylesheets/**/*.scss',
+    "./node_modules/flowbite/**/*.js"
+  ],
+  plugins: [
+    require('flowbite/plugin')
   ],
   theme: {
     extend: {
