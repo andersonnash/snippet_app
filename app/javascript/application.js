@@ -6,6 +6,9 @@ import "flowbite/dist/flowbite.turbo.js";
 import 'flowbite-datepicker';
 import 'flowbite/dist/datepicker.turbo.js';
 
+import "channels"
+import "channels/snippets_channel"
+
 import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
@@ -22,3 +25,4 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Rails UJS is not loaded');
   }
 });
+import "./channels"

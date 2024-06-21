@@ -26,6 +26,7 @@ class User < ApplicationRecord
           uid: auth.uid,
           name: auth.info.name,
           image: auth.info.image,
+          password: SecureRandom.hex(10)
           # oauth_token: auth.credentials.token,
           # oauth_expires_at: Time.at(auth.credentials.expires_at)
         )
@@ -34,6 +35,7 @@ class User < ApplicationRecord
         user.assign_attributes(
           name: auth.info.name,
           image: auth.info.image,
+          password: SecureRandom.hex(10)
           # oauth_token: auth.credentials.token,
           # oauth_expires_at: Time.at(auth.credentials.expires_at)
         )
