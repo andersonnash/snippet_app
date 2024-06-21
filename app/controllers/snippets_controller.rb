@@ -15,22 +15,25 @@ class SnippetsController < ApplicationController
   end
 
   def create
-    @snippet = current_user.snippets.build(snippet_params)
+    @snippet = current_user.snippets.new(snippet_params)
     if @snippet.save
+      ActionCable.server.broadcast 'snippets', { snippet: render_snippet(@snippet) }
       redirect_to @snippet, notice: 'Snippet was successfully created.'
     else
-      render 'new'
+      render :new
     end
   end
 
   def edit
   end
 
-  def update
+ def update
+    @snippet = current_user.snippets.find(params[:id])
     if @snippet.update(snippet_params)
+      ActionCable.server.broadcast 'snippets', { snippet: render_snippet(@snippet) }
       redirect_to @snippet, notice: 'Snippet was successfully updated.'
     else
-      render 'edit'
+      render :edit
     end
   end
 
@@ -40,6 +43,10 @@ class SnippetsController < ApplicationController
   end
   
   private
+
+  def render_snippet(snippet)
+    ApplicationController.renderer.render(partial: 'snippets/snippet', locals: { snippet: snippet })
+  end
 
   def set_snippet
     @snippet = Snippet.find(params[:id])
