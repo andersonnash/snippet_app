@@ -1,5 +1,6 @@
+// tailwind.config.js
 module.exports = {
-  darkMode: 'media', // or 'media' for media-query based dark mode
+  darkMode: 'media', // or 'class' for class-based dark mode
   content: [
     './app/**/*.html.erb',
     './app/helpers/**/*.rb',
@@ -7,9 +8,6 @@ module.exports = {
     './app/views/**/*',
     './app/assets/stylesheets/**/*.scss',
     "./node_modules/flowbite/**/*.js"
-  ],
-  plugins: [
-    require('flowbite/plugin')
   ],
   theme: {
     extend: {
@@ -25,5 +23,7 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin')
+  ],
 }
