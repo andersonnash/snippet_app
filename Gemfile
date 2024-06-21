@@ -50,7 +50,7 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 gem 'tailwindcss-rails'
-gem 'sassc-rails'
+# gem 'sassc-rails'
 
 gem 'redcarpet'
 gem 'pygments.rb'
